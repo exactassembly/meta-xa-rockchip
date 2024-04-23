@@ -1,0 +1,41 @@
+diff --git a/arch/arm/dts/px30-evb.dts b/arch/arm/dts/px30-evb.dts
+index 848bc39cf8..45952448ec 100644
+--- a/arch/arm/dts/px30-evb.dts
++++ b/arch/arm/dts/px30-evb.dts
+@@ -20,7 +20,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial5:115200n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	adc-keys {
+@@ -565,7 +565,7 @@
+ 	sd-uhs-sdr104;
+ 	vmmc-supply = <&vcc_sd>;
+ 	vqmmc-supply = <&vccio_sd>;
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &sdio {
+@@ -574,7 +574,7 @@
+ 	non-removable;
+ 	mmc-pwrseq = <&sdio_pwrseq>;
+ 	sd-uhs-sdr104;
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &tsadc {
+@@ -601,7 +601,8 @@
+ 	status = "okay";
+ };
+ 
+-&uart5 {
++&uart2 {
++	pinctrl-0 = <&uart2m0_xfer>;
+ 	status = "okay";
+ };
+ 
