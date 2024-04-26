@@ -7,7 +7,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 #SRC_URI += "file://00_ethernet.cfg"
 
 # This patch will break boards that use the evb dts
-SRC_URI += "file://debug-uart.patch"
+SRC_URI:xa-rockchip-px30-evb += "file://debug-uart.patch"
 SRC_URI += "file://firefly-px30.dts;subdir=git/arch/${ARCH}/boot/dts/rockchip"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
