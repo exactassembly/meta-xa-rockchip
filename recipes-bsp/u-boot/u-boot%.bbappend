@@ -8,7 +8,7 @@ SRC_URI += "file://01_use_default_env.cfg"
 
 DEPENDS:append = " xxd-native"
 
-do_configure:append:px30() {
+do_configure:prepend:px30() {
     sed -i 's/\(fdtimage=\).*/\1${RK_KERNEL_DEVICETREE}/' ${S}/../u-boot-initk-env.cmd
 }
 
