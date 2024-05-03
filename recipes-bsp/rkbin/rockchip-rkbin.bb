@@ -7,7 +7,7 @@
 # deploy loader into ${DEPLOYDIR} using deploy class and do_deploy
 
 DESCRIPTION = "Rockchip Firmware and Tool Binaries"
-LICENSE = "Poprietary"
+LICENSE = "Proprietary"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=15faa4a01e7eb0f5d33f9f2bcc7bff62"
 
 SRC_URI = "git://github.com/rockchip-linux/rkbin;protocol=https;branch=master"
