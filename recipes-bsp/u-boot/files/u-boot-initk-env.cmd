@@ -13,3 +13,5 @@ mmcbootpart=6
 mmcloadcmd=fatload
 mmcload=mmc rescan;${mmcloadcmd} mmc 0:${mmcbootpart} ${loadaddr} ${bootimg}
 mmcboot=setenv bootargs "earlycon=uart8250,mmio32,0xff160000 swiotlb=1 console=ttyS2,115200n8 rw root=/dev/mmcblk2p7 rootfstype=ext4 rootwait"; bootm ${loadaddr}
+read_rec_key=adc single saradc@ff288000 2 rec_key
+preboot=run read_rec_key; test ${rec_key} -le 30000 && rockusb 0 mmc 0
